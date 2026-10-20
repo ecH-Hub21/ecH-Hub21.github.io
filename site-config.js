@@ -4,12 +4,12 @@
 */
 window.PORTFOLIO_CONFIG = {
   name: "Harshiv Tailor",
-  headline: "Cybersecurity & Automobility student",
+  headline: "Cybersecurity Automobility",
   location: "Windsor, Ontario, Canada",
   email: "tailorharshiv2109@gmail.com",
   linkedin: "https://www.linkedin.com/in/harshiv-tailor-b0a0b2436/",
   github: "", // Not provided yet
-  website: "", // add your published URL after deploying
+  website: "https://ech-hub21.github.io/",
   summary: "BCA graduate and St. Clair College student in Cybersecurity & Automobility, exploring the intersection of cybersecurity, software, and connected mobility. Interested in secure systems, practical projects, and continuous learning.",
   education: [
     {

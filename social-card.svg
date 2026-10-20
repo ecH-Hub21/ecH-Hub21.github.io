@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs><pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" fill="none" stroke="#25353d" stroke-width="1"/></pattern><radialGradient id="glow"><stop stop-color="#284646"/><stop offset="1" stop-color="#0a1119" stop-opacity="0"/></radialGradient></defs>
+  <rect width="1200" height="630" fill="#0a1119"/><rect width="1200" height="630" fill="url(#grid)" opacity=".6"/><ellipse cx="930" cy="315" rx="370" ry="320" fill="url(#glow)"/>
+  <g transform="translate(865 315)" fill="none" stroke="#c7f36b"><circle r="222" stroke-dasharray="3 9"/><circle r="166" stroke="#385054"/><circle r="106" stroke-dasharray="2 8"/><circle r="61" stroke-width="1.5"/><path d="M-60 22V-12C-60-45-33-72 0-72S60-45 60-12V22M-32 22V-12C-32-30-18-44 0-44S32-30 32-12V22M-77 22H77" stroke-width="4" stroke-linecap="round"/><path d="M-211 95L-144 52L-91 22" stroke-width="2"/><circle cx="-211" cy="95" r="6" fill="#c7f36b"/><circle cx="144" cy="-126" r="6" fill="#c7f36b"/></g>
+  <text x="88" y="110" font-family="monospace" font-size="18" letter-spacing="5" fill="#c7f36b">PERSONAL PORTFOLIO / 001</text>
+  <text x="82" y="277" font-family="Arial, sans-serif" font-weight="700" font-size="84" letter-spacing="-5" fill="#f1f0e8">HARSHIV TAILOR</text>
+  <text x="88" y="350" font-family="Arial, sans-serif" font-size="35" fill="#c7f36b">Cybersecurity Automobility</text>
+  <text x="90" y="410" font-family="monospace" font-size="16" letter-spacing="3" fill="#9eafb1">SYSTEMS / SOFTWARE / TRUST</text>
+  <path d="M88 466H485" stroke="#34444b"/><path d="M88 466H196" stroke="#c7f36b" stroke-width="3"/>
+  <text x="88" y="515" font-family="Arial, sans-serif" font-size="20" fill="#9eafb1">Projects, education, credentials and professional interests.</text>
+</svg>

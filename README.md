@@ -1,4 +1,4 @@
-# Harshiv Tailor — Digital Field Dossier
+# Harshiv Tailor — Cybersecurity Automobility Portfolio
 
 A responsive personal portfolio designed around cybersecurity × connected mobility. It uses custom SVG artwork, a restrained signal palette, accessible navigation, a printable CV page, project and credential sections, and SEO metadata. There is no paid domain or build step required.
 
