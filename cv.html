@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e8e9e2">
+  <meta name="description" content="Printable CV for Harshiv Tailor, a cybersecurity and automobility student. Review education, selected academic projects, and technical areas of focus.">
+  <meta name="robots" content="index, follow">
+  <title>CV — Harshiv Tailor</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"Harshiv Tailor","description":"Cybersecurity and automobility student."}
+  </script>
+</head>
+<body class="cv-page">
+  <div class="cv-toolbar"><a href="index.html">← Back to portfolio</a><button type="button" onclick="window.print()">Print / Save as PDF ↗</button></div>
+  <main class="cv-sheet" id="cv-sheet">
+    <header class="cv-head"><div><p class="cv-kicker">CURRICULUM VITAE / PROFESSIONAL PROFILE</p><h1 id="cv-name">Harshiv Tailor</h1><h2 id="cv-headline">Cybersecurity & Automobility student</h2></div><div class="cv-contact" id="cv-contact"></div></header>
+    <p class="cv-summary" id="cv-summary"></p>
+    <section class="cv-section" id="cv-education-section"><h3>Education</h3><div id="cv-education"></div></section>
+    <section class="cv-section"><h3>Experience</h3><article class="cv-entry"><div class="cv-entry-head"><h4>Jr. Web Designer · ErrorX – IT Solution Company</h4><span class="cv-period">Sep 2024 – Aug 2026</span></div><p class="cv-subtitle">Navsari, Gujarat, India</p><p>Designed responsive websites using HTML5, CSS3, JavaScript, and Bootstrap; collaborated with development teams; communicated with clients to gather requirements; and monitored website performance, security, and reliability.</p></article><article class="cv-entry"><div class="cv-entry-head"><h4>Bookkeeper / Client Relations · Konark Accomputants</h4><span class="cv-period">Jan 2023 – Jul 2024</span></div><p class="cv-subtitle">Navsari, Gujarat, India</p><p>Maintained journal entries and general ledger records, and supported client communication for accurate, timely bookkeeping.</p></article></section>
+    <section class="cv-section" id="cv-projects-section"><h3>Selected Academic Projects</h3><div id="cv-projects"></div></section>
+    <section class="cv-section" id="cv-skills-section"><h3>Technical Skills & Tools</h3><div id="cv-skills"></div></section>
+    <section class="cv-section" id="cv-certifications-section"><h3>Certifications</h3><div id="cv-certifications"></div></section>
+    <section class="cv-section"><h3>Interests</h3><p>Sketching · Swimming</p></section>
+    <footer class="cv-footer"><span>HARSHIV TAILOR / CV</span><span>UPDATED <span id="cv-date"></span></span></footer>
+  </main>
+  <script src="site-config.js"></script>
+  <script>
+    (function () {
+      const c = window.PORTFOLIO_CONFIG || {};
+      const $ = s => document.querySelector(s);
+      const e = v => String(v ?? "").replace(/[&<>"']/g, x => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[x]));
+      const safe = v => { try { const u = new URL(v, window.location.href); return ["https:","http:"].includes(u.protocol) ? u.href : ""; } catch (_) { return ""; } };
+      document.title = `CV — ${c.name || "Professional Profile"}`;
+      $("#cv-name").textContent = c.name || "Your Name";
+      $("#cv-headline").textContent = c.headline || "Professional Profile";
+      $("#cv-summary").textContent = c.summary || "Add a concise professional summary to site-config.js.";
+      const contacts = [];
+      if (c.email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(c.email)) contacts.push(`<div><a href="mailto:${e(c.email)}">${e(c.email)}</a></div>`);
+      if (c.location) contacts.push(`<div>${e(c.location)}</div>`);
+      if (safe(c.linkedin)) contacts.push(`<div><a href="${e(safe(c.linkedin))}">LinkedIn profile</a></div>`);
+      if (safe(c.github)) contacts.push(`<div><a href="${e(safe(c.github))}">GitHub profile</a></div>`);
+      $("#cv-contact").innerHTML = contacts.join("");
+      const education = Array.isArray(c.education) ? c.education : [];
+      $("#cv-education").innerHTML = education.map(item => `<article class="cv-entry"><div class="cv-entry-head"><h4>${e(item.institution || "Institution")}</h4><span class="cv-period">${e(item.period || "")}</span></div><p class="cv-subtitle">${e(item.program || "")}${item.location ? ` · ${e(item.location)}` : ""}</p>${item.detail ? `<p>${e(item.detail)}</p>` : ""}</article>`).join("") || `<p class="cv-note">Add education entries in site-config.js.</p>`;
+      const projects = Array.isArray(c.projects) ? c.projects : [];
+      $("#cv-projects").innerHTML = projects.map(item => `<article class="cv-entry"><div class="cv-entry-head"><h4>${e(item.title || "Project")}</h4><span class="cv-period">${e(item.status || item.type || "")}</span></div><p>${e(item.description || "")}</p>${item.stack?.length ? `<p class="cv-subtitle">Tools: ${e(item.stack.join(", "))}</p>` : ""}</article>`).join("") || `<p class="cv-note">Add selected projects in site-config.js.</p>`;
+      const skills = Array.isArray(c.skills) ? c.skills : [];
+      $("#cv-skills").innerHTML = skills.map(item => `<div class="cv-skill-row"><strong>${e(item.group || "Skills")}</strong><span>${e((item.items || []).join(", "))}</span></div>`).join("") || `<p class="cv-note">Add relevant skills in site-config.js.</p>`;
+      const certs = Array.isArray(c.certifications) ? c.certifications.filter(item => item && item.name) : [];
+      if (certs.length) $("#cv-certifications").innerHTML = certs.map(item => `<article class="cv-entry"><div class="cv-entry-head"><h4>${e(item.name)}</h4><span class="cv-period">${e(item.date || "")}</span></div><p>${e(item.issuer || "")}${item.url && safe(item.url) ? ` · ${e(safe(item.url))}` : ""}</p></article>`).join("");
+      else { $("#cv-certifications-section").hidden = true; }
+      $("#cv-date").textContent = new Date().toLocaleDateString("en-CA", { month: "short", year: "numeric" }).toUpperCase();
+    })();
+  </script>
+</body>
+</html>
